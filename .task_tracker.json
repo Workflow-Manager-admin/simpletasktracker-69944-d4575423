@@ -1,0 +1,5 @@
+{
+  "task_description": "{'description': 'A simple Task Tracker app that displays a list of tasks with options to mark each as completed, delete tasks, and add new tasks through an input form.', 'containers': [{'container_name': 'task_tracker_frontend', 'platform': 'web', 'framework': 'angular', 'description': 'Frontend interface for users to manage tasks: display, create, update, and delete tasks.', 'interfaces': 'Web UI served over HTTP', 'relative_path': 'task_tracker_frontend_workspace', 'dependencies': [], 'container_type': 'frontend', 'container_details': {'features': ['Display a list of tasks', 'Mark tasks as completed with a checkbox', 'Delete tasks', 'Add a new task via input form'], 'colors': {'primary': '#1976d2', 'secondary': '#424242', 'accent': '#ffd600'}, 'theme': 'auto', 'layout_description': 'Single page application with a header, main content area displaying tasks in a list, and an input form at the top or bottom for adding new tasks.', 'style': 'modern, minimalistic'}}], '3rd_party_services': [], 'figma_components': '', 'manifest_path': '/home/kavia/workspace/code-generation/.project_manifest.yaml'}",
+  "tasks": {},
+  "next_task_id": 1
+}
