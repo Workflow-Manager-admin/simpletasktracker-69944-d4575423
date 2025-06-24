@@ -1,0 +1,183 @@
+/* Task Tracker Modern Minimal Theme */
+:host {
+  display: block;
+  min-height: 100vh;
+  background: var(--tt-bg, #f3f6fa);
+  --tt-primary: #1976d2;
+  --tt-secondary: #424242;
+  --tt-accent: #ffd600;
+  --tt-bg: #f3f6fa;
+  --tt-header-bg: #ffffff;
+  --tt-border: #e0e0e0;
+  --tt-radius: 14px;
+  --tt-shadow: 0 2px 16px 0 #00000012;
+}
+
+.tt-header {
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  text-align: center;
+  font-weight: 600;
+  font-size: 2.2rem;
+  letter-spacing: -1.5px;
+  background: var(--tt-header-bg);
+  color: var(--tt-primary);
+  box-shadow: var(--tt-shadow);
+}
+
+.tt-main {
+  margin: 0 auto;
+  margin-top: 2.5rem;
+  max-width: 480px;
+  background: #fff;
+  border-radius: var(--tt-radius);
+  box-shadow: var(--tt-shadow);
+  padding: 1.5rem;
+  min-height: 320px;
+}
+
+.tt-task-input-section {
+  margin-bottom: 1.7rem;
+}
+.tt-task-form {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+}
+.tt-task-input {
+  flex: 1 1 0;
+  padding: 0.7rem 1rem;
+  border: 1px solid var(--tt-border);
+  border-radius: var(--tt-radius);
+  font-size: 1.1rem;
+  background: var(--tt-bg, #f3f6fa);
+  outline: none;
+  transition: border 0.2s;
+}
+.tt-task-input:focus {
+  border-color: var(--tt-primary);
+}
+
+.tt-add-btn {
+  border: none;
+  background: var(--tt-primary);
+  color: #fff;
+  font-size: 1.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 2px 8px #0001;
+  transition: background .2s, box-shadow .2s;
+}
+.tt-add-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+.tt-add-btn:not(:disabled):active {
+  background: var(--tt-accent);
+  color: var(--tt-secondary);
+  box-shadow: 0 1px 4px #0002;
+}
+
+.tt-task-list-section {
+  margin: 0;
+}
+
+.tt-task-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tt-task-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.7rem 0.2rem;
+  border-bottom: 1px solid var(--tt-border);
+  transition: background .2s;
+  background: transparent;
+}
+.tt-task-row:last-child {
+  border-bottom: none;
+}
+
+.tt-task-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  cursor: pointer;
+  flex: 1 1 auto;
+}
+
+.tt-checkbox[type="checkbox"] {
+  width: 1.3rem;
+  height: 1.3rem;
+  accent-color: var(--tt-primary);
+  margin-right: .2rem;
+  border-radius: 6px;
+  background: #f5f5f5;
+  border: 2px solid var(--tt-border);
+  vertical-align: middle;
+  transition: accent-color 0.2s;
+}
+
+.tt-task-text {
+  font-size: 1.13rem;
+  color: var(--tt-secondary);
+  font-weight: 400;
+  transition: color .2s;
+  user-select: text;
+  line-break: anywhere;
+}
+.tt-task-text.completed {
+  text-decoration: line-through;
+  color: #bdbdbd;
+}
+
+.tt-del-btn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: #ccc;
+  margin-left: 0.6rem;
+  padding: 0.3rem;
+  border-radius: 100%;
+  transition: color 0.16s, background 0.16s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tt-del-btn:hover, .tt-del-btn:focus {
+  color: var(--tt-accent);
+  background: #fffbe6;
+}
+.tt-del-btn svg {
+  display: block;
+}
+
+.tt-empty-state {
+  color: #aaa;
+  font-size: 1.09rem;
+  text-align: center;
+  margin-top: 2rem;
+  padding: 1rem;
+  background: #fcfcfd;
+  border-radius: var(--tt-radius);
+  border: 1px dashed var(--tt-border);
+}
+@media (max-width: 600px) {
+  .tt-main {
+    max-width: 100%;
+    padding: 1rem;
+    margin-top: 1rem;
+  }
+  .tt-header {
+    font-size: 1.5rem;
+    padding: 1.2rem 0.5rem 1.1rem 0.5rem;
+  }
+}

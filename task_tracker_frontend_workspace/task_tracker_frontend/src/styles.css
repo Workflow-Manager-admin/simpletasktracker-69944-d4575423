@@ -1,0 +1,12 @@
+/* Base styles for Task Tracker app */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
+  background: #f3f6fa; /* Light base background */
+  color: #232323;
+}
+
+* {
+  box-sizing: border-box;
+}

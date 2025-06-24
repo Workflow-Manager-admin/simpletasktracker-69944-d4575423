@@ -1,0 +1,58 @@
+<!-- Task Tracker App -->
+<header class="tt-header">
+  <h1>Task Tracker</h1>
+</header>
+<main class="tt-main">
+  <section class="tt-task-input-section">
+    <form (ngSubmit)="addTask()" class="tt-task-form" autocomplete="off">
+      <input
+        type="text"
+        [(ngModel)]="newTaskText"
+        name="taskInput"
+        class="tt-task-input"
+        placeholder="Add a new task"
+        maxlength="100"
+        required
+        autocomplete="off"
+        aria-label="Task name"
+      />
+      <button type="submit" class="tt-add-btn" [disabled]="!newTaskText.trim()">
+        <span>+</span>
+      </button>
+    </form>
+  </section>
+
+  <section *ngIf="tasks.length; else noTasksBlock" class="tt-task-list-section">
+    <ul class="tt-task-list" role="list">
+      <li *ngFor="let task of tasks; trackBy: trackByTaskId" class="tt-task-row">
+        <label class="tt-task-checkbox-label">
+          <input
+            type="checkbox"
+            [checked]="task.completed"
+            (change)="toggleTaskCompletion(task)"
+            class="tt-checkbox"
+            [attr.aria-label]="'Mark ' + task.text + ' as complete'"
+          />
+          <span
+            class="tt-task-text"
+            [class.completed]="task.completed"
+            >{{task.text}}</span
+          >
+        </label>
+        <button
+          type="button"
+          class="tt-del-btn"
+          (click)="deleteTask(task)"
+          aria-label="Delete"
+        >
+          <svg viewBox="0 0 20 20" width="20" height="20" focusable="false" aria-hidden="true">
+            <path fill="none" stroke="currentColor" stroke-width="2" d="M4 4L16 16M16 4L4 16"/>
+          </svg>
+        </button>
+      </li>
+    </ul>
+  </section>
+  <ng-template #noTasksBlock>
+    <div class="tt-empty-state" role="status">No tasks. Add your first task!</div>
+  </ng-template>
+</main>
